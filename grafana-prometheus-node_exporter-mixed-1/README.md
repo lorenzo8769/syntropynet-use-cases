@@ -24,6 +24,7 @@
 - VM2:  **Prometheus**
 - VM3:  **Node-Exporter**
 
+<<<<<<< Updated upstream
 # Installation
 
 Copy the entire **roles directory** to your controller server
@@ -45,6 +46,25 @@ Install the Python dependencies.
 ```
 pip3 install -U -r requirements.txt
 ```
+=======
+# Installation SyntropyCTL
+
+You can install our packages in the following ways:
+
+You can install the sdk using pip:
+`pip3 install syntropycli`
+
+Latest development version:
+- HTTPS
+`pip3 install git+https://github.com/SyntropyNet/syntropy-cli#egg=syntropycli`
+
+- Git
+`pip install git+git@github.com:SyntropyNet/syntropy-cli#egg=syntropycli`
+
+- requirements.txt
+`-e git+git@github.com:SyntropyNet/syntropy-cli#egg=syntropycli`
+
+>>>>>>> Stashed changes
 
 # Authentication
 
@@ -159,7 +179,11 @@ Options:
   --help           Show this message and exit.
 ```
 
+<<<<<<< Updated upstream
 `syntropyctl create-network MQT3 --topology P2M` <- used to configure the network when one endpoint connects to many endpoints.
+=======
+`syntropyctl create-network MON3 --topology P2M` <- used to configure the network when one endpoint connects to many endpoints.
+>>>>>>> Stashed changes
 
 
 List the Syntropy Networks on your account:
@@ -181,7 +205,11 @@ Options:
   -j, --json         Outputs a JSON instead of a table.
   --help             Show this message and exit.
 ```
+<<<<<<< Updated upstream
 
+=======
+Launch this:
+>>>>>>> Stashed changes
 `syntropyctl get-endpoints`
 
 Result:
@@ -195,10 +223,122 @@ Result:
 +----------+------+----------------+-----------------+-------------------+--------+---------------+
 ```
 
+<<<<<<< Updated upstream
 
 * Solution 2  - using SyntropyNAC command and YAML template
 
 
+=======
+Enable each of the services (match the IDs to your own):
+
+Example:
+```
+syntropyctl configure-endpoints --enable-all-services <Agent_ID>
+```
+
+Launch this:
+```
+syntropyctl configure-endpoints --enable-all-services 640
+```
+
+```
+syntropyctl configure-endpoints --enable-all-services 641
+```
+
+```
+syntropyctl configure-endpoints --enable-all-services 642
+```
+
+
+Next, create the connections using the `create-connections` command.
+
+Example:
+```
+syntropyctl create-connections -j <network_name> <broker_id> <publisher_id> <broker_id> <subscriber_id>
+```
+
+Launch this:
+```
+syntropyctl create-connections -j MON3 640 641 641 642
+```
+
+Your output should resemble this:
+```
+[
+    {
+        "agent_connection_id": 26278,
+        "agent_1_id": 640,
+        "agent_interface_1_id": 2675,
+        "agent_2_id": 641,
+        "agent_interface_2_id": 2676,
+        "network_id": 318,
+        "agent_connection_created_at": "2021-01-16T13:19:51.870",
+        "agent_connection_updated_at": "2021-01-16T13:19:51.870",
+        "agent_connection_modified_at": "2021-01-16T13:19:51.870",
+        "agent_sdn_policy_id": null,
+        "agent_connection_link_tag": "PUBLIC",
+        "agent_connection_status": "PENDING",
+        "agent_connection_status_reason": null,
+        "agent_connection_last_handshake": null,
+        "agent_connection_tx_bytes_total": null,
+        "agent_connection_rx_bytes_total": null,
+        "agent_connection_latency_ms": null,
+        "agent_connection_packet_loss": null
+    },
+    {
+        "agent_connection_id": 26279,
+        "agent_1_id": 641,
+        "agent_interface_1_id": 2676,
+        "agent_2_id": 642,
+        "agent_interface_2_id": 2677,
+        "network_id": 318,
+        "agent_connection_created_at": "2021-01-16T13:19:51.870",
+        "agent_connection_updated_at": "2021-01-16T13:19:51.870",
+        "agent_connection_modified_at": "2021-01-16T13:19:51.870",
+        "agent_sdn_policy_id": null,
+        "agent_connection_link_tag": "PUBLIC",
+        "agent_connection_status": "PENDING",
+        "agent_connection_status_reason": null,
+        "agent_connection_last_handshake": null,
+        "agent_connection_tx_bytes_total": null,
+        "agent_connection_rx_bytes_total": null,
+        "agent_connection_latency_ms": null,
+        "agent_connection_packet_loss": null
+    }
+]
+```
+
+
+* Solution 2  - using SyntropyNAC command and YAML template
+
+The template is defined in `network/MON3.yaml`. You can first perform a dry run using the `--dry-run` flag.
+
+```
+syntropynac configure-networks --dry-run networks/MON4.yaml
+```
+
+Result:
+```
+Configuring network MON3
+Would create network MON3 as P2M
+Would create 2 connections for network MON4
+Done
+```
+
+Next, create the network:
+```
+syntropynac configure-networks network/MON3.yaml
+```
+
+The result looks like:
+```
+Configuring network MON3
+Created network MON3 with id 319
+Created 2 connections for network MON3
+Configured 2 connections and 2 subnets for network MON4
+Done
+```
+>>>>>>> Stashed changes
 
 
 # Node_Exporter <-> Prometheus
