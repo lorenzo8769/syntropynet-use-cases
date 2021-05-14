@@ -3,6 +3,10 @@
 # Connect your Amazon FireTV on SyntropyStack with Wireguard
 
 
+
+
+
+
 ## Prepare your Private Syntropy VPN
 Follow all the instructions on this URL: https://docs.syntropystack.com/docs/setting-up-and-running-a-private-vpn
 
