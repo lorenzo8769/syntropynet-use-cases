@@ -3,14 +3,12 @@
 # Connect your Amazon FireTV on SyntropyStack with Wireguard
 
 
-
-
-
-
 ## Prepare your Private Syntropy VPN
 Follow all the instructions on this URL: https://docs.syntropystack.com/docs/setting-up-and-running-a-private-vpn
 
-At the end, don't forget to download the configuration file to store it on your computer (rename it to wg.conf)
+Create yout Virtual Host > FireTV
+
+At the end, don't forget to download the configuration file to store it on your computer (__rename it to wg.conf__)
 
 
 ## Enable ADB on FireTV.
@@ -35,7 +33,7 @@ To do this Goto Settings -> My FireTV -> Developer Options
 </p>
 
 
-## Download Wireguard APK
+## Download the lastest Wireguard APK
 
 From APKPure
 https://m.apkpure.com/wireguard/com.wireguard.android
@@ -62,7 +60,15 @@ The next step is to configure the adbLink device. Open / Run the adbLink file. I
 <img src="images/adblink_1.jpg">
 </p>
 
-Next, enter the network IP address of the Fire TV you're connecting to.
+Next, enter the network IP address of the Fire TV you're connecting to. You can click on "Refresh ADP" to authorize the connection from FireTV
+
+Once connected, push config file (wg.conf) in one of the directories of FireTV
 
 
-Done. once the installtion is success you can see wireguard among the other app on fireTV. Open the wireguard app on fireTV to configure the VPN.
+## Connect Wireguard on Syntropy
+
+Once the installation is success you can see Wireguard among the other app on FireTV. Open the wireguard app on fireTV to configure the VPN.
+
+Click on "+" and research wg.conf.
+
+Done, You are connected
