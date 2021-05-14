@@ -2,6 +2,13 @@
 
 # Connect your Amazon FireTV on SyntropyStack with Wireguard
 
+
+## Prepare your Private Syntropy VPN
+Follow all the instructions on this URL: https://docs.syntropystack.com/docs/setting-up-and-running-a-private-vpn
+
+At the end, don't forget to download the configuration file to store it on your computer (rename it to wg.conf)
+
+
 ## Enable ADB on FireTV.
 
 First step to side load the app to FireTv is to enable ADB debugging and Apps from unknown sources.
