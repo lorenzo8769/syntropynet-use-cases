@@ -55,10 +55,7 @@ Go to FireTV > About > Network
 
 Download adbLink for your platform from http://jocala.com/
 
-The next step is to configure the adbLink device. Open / Run the adbLink file. If you are using it for the first time, you will not see anything in the "Current Device" list. Click "new" to create a new Fire TV device profile, as shown below:
-<p align="center">
-<img src="images/adblink_1.jpg">
-</p>
+The next step is to configure the adbLink device. Open / Run the adbLink file. 
 
 Next, enter the network IP address of the Fire TV you're connecting to. You can click on "Refresh ADP" to authorize the connection from FireTV
 
