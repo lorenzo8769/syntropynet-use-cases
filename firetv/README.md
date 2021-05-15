@@ -11,6 +11,10 @@ Create yout Virtual Host > FireTV
 At the end, don't forget to download the configuration file to store it on your computer (__rename it to wg.conf__)
 
 
+<p align="center"><img src="images/syntropystack_1.png"></p>
+
+
+
 ## Enable ADB on FireTV.
 
 First step to side load the app to FireTv is to enable ADB debugging and Apps from unknown sources.
@@ -55,7 +59,7 @@ Go to FireTV > About > Network
 
 Download adbLink for your platform from http://jocala.com/
 
-The next step is to configure the adbLink device. Open / Run the adbLink file. 
+The next step is to configure the adbLink device. Open / Run the adbLink file.
 
 Next, enter the network IP address of the Fire TV you're connecting to. You can click on "Refresh ADP" to authorize the connection from FireTV
 
@@ -69,3 +73,5 @@ Once the installation is success you can see Wireguard among the other app on Fi
 Click on "+" and research wg.conf.
 
 Done, You are connected
+
+<p align="center"><img src="images/wireguard_1.png"></p>
